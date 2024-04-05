@@ -22,31 +22,31 @@ console.log(`4. Извлечение подстроки: ${newText}`);
 
 // Задание 5
 // Замените в извлеченной подстроке (newText) все вхождения слова клён на дубе и сохраните результат в переменную replacedText.
-let replacedText = newText.replace('клён', 'дубе');
+const replacedText = newText.replace('клён', 'дубе');
 console.log(`5. Замена "клён" на "дубе": ${replacedText}`);
 
 
 // Задание 6
 // Приведите текст в переменной result к верхнему регистру и сохраните результат в переменную replacedText2.
-let replacedText2 = result.toLocaleUpperCase();
+const replacedText2 = result.toLocaleUpperCase();
 console.log(`6. Строка result в верхнем регистре: \n ${replacedText2}`);
 
 
 // Задание 7
 // Замените все вхождения слова клён на дуб в переменной result и сохраните результат в переменную replacedText3.
-let replacedText3 = result.replace(/клён/g, 'дуб');
+const replacedText3 = result.replace(/клён/g, 'дуб');
 console.log(`7. Замена "клён" на "дуб" (все вхождения) в переменной result: ${replacedText3}`);
 
 
 // Задание 8
 // Найдите индекс первого вхождения слова моря в тексте и сохраните в переменную index.
-let index = replacedText3.indexOf('моря');
+const index = replacedText3.indexOf('моря');
 console.log(index);
 
 
 // Задание 9
 // Измените только первую букву в переменной replacedText на заглавную без использования регулярных выражений и сохраните результат в переменную modifiedText.
-let modifiedText = replacedText[0].toUpperCase();
+const modifiedText = replacedText[0].toUpperCase();
 console.log(`9. Строка с измененной первой буквой: ${modifiedText}`);
 
 
