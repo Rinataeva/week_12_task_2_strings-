@@ -7,32 +7,43 @@
 </head>
 <body>
     <h1>Password Generation</h1>
-    <button id="myBtn" onclick="generateFourLetters()">Получить пароль</button>
+    <!-- Первый способ  -->
+    <!-- <button id="myBtn">Получить пароль</button> -->
+    <!-- Второй способ -->
+    <button onclick="generateFourLetters()">Получить пароль</button> 
     <div id="result">
     </div>
     <script>
-        // Первый способ - Не работает. Генерирует одинаковые буквы
+        // // Первый способ - рабочий
+        // // Нахожу кнопку и добавляю обработчик события сразу с функцией
         // document.getElementById('myBtn').addEventListener('click', function(){
+        //     // Объявляю переменную с буквами алфавита
         // let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        // const generateIndex = Math.floor(Math.random()* alphabet.length);  
-        // let newWord = alphabet[generateIndex]; 
-        // document.getElementById('result').textContent = newWord + newWord + newWord + newWord;
+        // let newWord = ' '; // Переменная для обнуления значения при каждом вызове функции 
+        // // Создаю стрелочную функцию для генерации индекса (1 случайной буквы)  
+        // const generateIndex = () => {
+        // return Math.floor(Math.random()* alphabet.length);  
+        // } 
+        // // В переменную newWord кладу массив? (алфавит с функцией)
+        // newWord = alphabet[generateIndex(alphabet.length)]+ alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)];
+        // // Нахожу див и вывожу текст с новым словом из 4 букв 
+        // document.getElementById('result').textContent = newWord;
         // });
 
-        // // Второй вариант - рабочий 
-        // // Объявляю переменную 
-        // let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        // let newWord = ' ';  // Очищаю значение 
-        // //Создаю функцию генерирующую индекс (одну случайную букву)
-        // function generateIndex (length){
-        //     return Math.floor(Math.random()* alphabet.length); // по формуле мы умножаем на количество букв
-        // }
-        // // Создаю функцию для генерации четырех букв
-        // const generateFourLetters = () =>{
-        // // В переменную newWord кладу функцию 
-        // newWord = alphabet[generateIndex(alphabet.length)]+ alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)];
-        // document.getElementById('result').innerText = newWord;  
-        // } 
+        // Второй вариант - рабочий 
+        // Объявляю переменную 
+        let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let newWord = ' ';  // Очищаю значение 
+        //Создаю функцию генерирующую индекс (одну случайную букву)
+        function generateIndex (length){
+            return Math.floor(Math.random()* alphabet.length); // по формуле мы умножаем на количество букв
+        }
+        // Создаю функцию для генерации четырех букв (прописываю ее в html onclick)
+        const generateFourLetters = () =>{
+        // В переменную newWord кладу функцию 
+        newWord = alphabet[generateIndex(alphabet.length)]+ alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)];
+        document.getElementById('result').innerText = newWord;  
+        } 
     </script>
 </body>
 </html>
