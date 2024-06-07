@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Password Generation</h1>
-    <button onclick="onGenerate()">Получить пароль</button>
+    <button id="myBtn" onclick="generateFourLetters()">Получить пароль</button>
     <div id="result">
     </div>
     <script>
@@ -19,16 +19,31 @@
         // document.getElementById('result').textContent = newWord + newWord + newWord + newWord;
         // });
 
-        // Второй способ - тоже не работает. 
-        // let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        // function generateIndex (){
-        //     return Math.floor(Math.random()* alphabet.length);
+        // Второй вариант - рабочий 
+        // Объявляю переменную 
+        let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let newWord = ' ';  // Очищаю значение 
+        //Создаю функцию генерирующую индекс (одну случайную букву)
+        function generateIndex (length){
+            return Math.floor(Math.random()* alphabet.length); // по формуле мы умножаем на количество букв
+        }
+        // Создаю функцию для генерации четырех букв
+        const generateFourLetters = () =>{
+        // В переменную newWord кладу функцию 
+        newWord = alphabet[generateIndex(alphabet.length)]+ alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)];
+        document.getElementById('result').innerText = newWord;  
+        } 
+         
+        
+        
+        // const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // function generateIndex(){
+        //     const randomIndex = Math.floor(Math.random()*alphabet.length);
+        //     const newWord = alphabet[randomIndex];
+        //     return newWord;
         // }
-        // let newWord = '';
-        // const onGenerate = () =>{
-        // newWord = alphabet[generateIndex(alphabet.length)]+ alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)] + alphabet[generateIndex(alphabet.length)];
-        // document.getElementById('result').innerText = generateWord;
-        // }        
+        // document.getElementById('result').textContent = alphabet[generateIndex(alphabet.length)];
+
     </script>
 </body>
 </html>
